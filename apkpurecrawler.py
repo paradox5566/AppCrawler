@@ -38,6 +38,8 @@ class ApkPureCrawler(object):
                 # Open the url
                 session = requests.Session()
                 r = session.get(download_src)
+                
+                # Download apk files to the /test folder under the cwd.
                 outputFile = os.path.join(os.getcwd() + "/test/", apkName)
                 with open(outputFile, 'wb') as local_file:
                     local_file.write(r.content)
